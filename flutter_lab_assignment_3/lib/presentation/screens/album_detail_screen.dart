@@ -18,13 +18,9 @@ class _AlbumDetailScreenState extends State<AlbumDetailScreen> {
   void initState() {
     super.initState();
     _albumPhotosFuture = AlbumRemoteDataSourceImpl().getAlbums().then((response) {
-      if (response.data != null) {
-        return response.data!
+        return response.data
             .where((photo) => photo.albumId == widget.album.albumId)
             .toList();
-      } else {
-        return [];
-      }
     });
   }
 
