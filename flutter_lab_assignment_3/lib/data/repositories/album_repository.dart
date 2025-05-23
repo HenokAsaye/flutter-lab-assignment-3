@@ -79,7 +79,7 @@ class AlbumRepository implements IAlbumRepository {
     final response = await _remoteDataSource.getAlbumById(id);
     
     if (response.isSuccess && response.data != null) {
-      return response.data!;
+      return response.data;
     } else {
       throw Exception(response.error ?? 'Failed to fetch album');
     }

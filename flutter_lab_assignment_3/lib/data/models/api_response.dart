@@ -39,7 +39,7 @@ class ApiResponse<T> {
   /// Gets the data if it exists, otherwise throws an error.
   T get data {
     if (isSuccess && _data != null) {
-      return _data!;
+      return _data;
     }
     throw StateError('Cannot access data in error response');
   }
