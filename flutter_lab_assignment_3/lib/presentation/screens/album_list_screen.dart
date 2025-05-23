@@ -17,7 +17,7 @@ class AlbumListScreen extends StatelessWidget {
           'Photo Albums',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor:Colors.blue[200],
         elevation: 0,
       ),
       body: BlocBuilder<AlbumBloc, AlbumState>(
@@ -33,7 +33,7 @@ class AlbumListScreen extends StatelessWidget {
                   const CircularProgressIndicator(),
                   const SizedBox(height: 16),
                   Text(
-                    'Loading albums...',
+                    'Albums are Loding⏰...',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ],
@@ -55,7 +55,7 @@ class AlbumListScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Error loading albums',
+                      'Error loading albums😭',
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 8),
