@@ -53,9 +53,9 @@ class AlbumRepository implements IAlbumRepository {
     try {
       final response = await _remoteDataSource.getAlbums();
       
-      if (response.isSuccess && response.data != null) {
+      if (response.isSuccess) {
         _cachedAlbums = response.data;
-        return response.data!;
+        return response.data;
       } else {
         throw Exception(response.error ?? 'Failed to fetch albums');
       }
@@ -78,7 +78,7 @@ class AlbumRepository implements IAlbumRepository {
     // If not in cache or cache is empty, fetch from remote
     final response = await _remoteDataSource.getAlbumById(id);
     
-    if (response.isSuccess && response.data != null) {
+    if (response.isSuccess) {
       return response.data;
     } else {
       throw Exception(response.error ?? 'Failed to fetch album');
